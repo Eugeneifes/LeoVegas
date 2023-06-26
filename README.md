@@ -1,4 +1,4 @@
-##LeoVegas test task
+#LeoVegas test task
 
 - docs - directory with files for API endpoints documentation (Swagger)
 - Dockerfile - build instructions for Docker Image which will be uploaded to the Cloud Registry (Google Cloud Platforom)
