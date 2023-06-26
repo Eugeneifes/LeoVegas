@@ -1,0 +1,30 @@
+Retrain Endpoint
+This endpoint allows retraining model with new data (collected with /add_data endpoint)
+---
+parameters:
+  - name: body
+    in: body
+    required: true
+    schema:
+      type: object
+      properties:
+        api-key:
+          type: string
+          example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+responses:
+  200:
+    description: Successful operation
+    schema:
+      type: object
+      properties:
+        status:
+          type: string
+          example: "Model retrained, new version: 2."
+  400:
+    description: Invalid request or malformed data
+    schema:
+      type: object
+      properties:
+        status:
+          type: string
+          example: Error occurred while processing the request.

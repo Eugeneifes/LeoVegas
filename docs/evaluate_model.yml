@@ -1,0 +1,36 @@
+Evaluate Model Endpoint
+This endpoint allows evaluating model performance on new (unseen) data
+---
+parameters:
+  - name: body
+    in: body
+    required: true
+    schema:
+      type: object
+      properties:
+        api-key:
+          type: string
+          example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+responses:
+  200:
+    description: Successful operation
+    schema:
+      type: object
+      properties:
+        loss:
+          type: float
+          example: 4300601.5
+        model_version:
+          type: string
+          example: 1
+        test_loss:
+          type: float
+          example: 4190266.5
+  400:
+    description: Invalid request or malformed data
+    schema:
+      type: object
+      properties:
+        status:
+          type: string
+          example: Error occurred while processing the request.

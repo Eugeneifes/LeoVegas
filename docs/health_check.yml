@@ -1,0 +1,17 @@
+Health Check Endpoint
+This endpoint checks the health status of the API
+---
+responses:
+  200:
+    description: Successful operation
+    schema:
+      type: object
+      properties:
+        status:
+          type: string
+          example: healthy
+        model version:
+          type: string
+          example: 1
+        test_loss:
+          example: 4190266.5

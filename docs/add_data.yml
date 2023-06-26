@@ -1,0 +1,38 @@
+Add Data Endpoint
+This endpoint allows adding new data (tenure, deposit, turnover, withdrawal and deposit_next should be passed)
+---
+parameters:
+  - name: body
+    in: body
+    required: true
+    schema:
+      type: object
+      properties:
+        values:
+          type: array
+          example: [[12, 770, 1650, 1400, 2820], [15, 1000, 2000, 500, 2300], [20, 500, 1500, 1000, 300]]
+          items:
+            type: array
+            items:
+              type: number
+        api-key:
+          type: string
+          example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+responses:
+  200:
+    description: Successful operation
+    schema:
+      type: object
+      properties:
+        status:
+          type: string
+          example: Data added successfully.
+
+  400:
+    description: Invalid request or malformed data
+    schema:
+      type: object
+      properties:
+        status:
+          type: string
+          example: Error occurred while processing the request.

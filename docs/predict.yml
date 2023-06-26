@@ -1,0 +1,40 @@
+Prediction Endpoint
+This endpoint predicts deposit_next value based on tenure, deposit, turnover and withdrawal
+---
+parameters:
+  - name: body
+    in: body
+    required: true
+    schema:
+      type: object
+      properties:
+        values:
+          type: array
+          example: [[12, 770, 1650, 1400], [15, 1000, 2000, 500], [20, 500, 1500, 1000]]
+          items:
+            type: array
+            items:
+              type: number
+        api-key:
+          type: string
+          example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+responses:
+  200:
+    description: Successful operation
+    schema:
+      type: object
+      properties:
+        predictions:
+          type: array
+          example: [55.950653076171875, 21.68572235107422, 33.31529998779297]
+          items:
+            type: number
+            description: Predicted deposit values for each vector in the batch
+  400:
+    description: Invalid request or malformed data
+    schema:
+      type: object
+      properties:
+        status:
+          type: string
+          example: Error occurred while processing the request.
