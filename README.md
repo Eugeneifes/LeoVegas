@@ -20,5 +20,5 @@
 
 **Ideas for the future**
 
-- set up a trigger alert in Google Cloud which will signal the degradation of the model (e.g., the Loss metric on new data is below the threshold for some time). Notification can be sent to a convenient channel: email, google chat, etc.
+- set up a trigger alert in Google Cloud which will indicate the degradation moment of the model (e.g., the Loss metric on new data is below the threshold for some time). Notification can be sent to a convenient channel: email, google chat, etc.
 - implementation of a mechanism for switching between model versions on demand (for example, traffic management scenario as part of an A/B test)
